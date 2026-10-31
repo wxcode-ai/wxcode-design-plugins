@@ -22,13 +22,13 @@ registry/
 ## Install a single plugin (any Open Design daemon)
 
 ```bash
-od plugin install github:GilbertoAbrao/wxcode-design-plugins@main/plugins/admin-neobrutal
+od plugin install github:wxcode-ai/wxcode-design-plugins@main/plugins/admin-neobrutal
 ```
 
 ## Register the whole catalog (UI: Plugins → Sources → Add source)
 
 ```
-https://raw.githubusercontent.com/GilbertoAbrao/wxcode-design-plugins/main/registry/wxcode-marketplace.json
+https://raw.githubusercontent.com/wxcode-ai/wxcode-design-plugins/main/registry/wxcode-marketplace.json
 ```
 
 All entries then appear under **Plugins → Available** with 1-click install.

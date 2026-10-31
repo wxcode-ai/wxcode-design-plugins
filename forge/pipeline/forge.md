@@ -320,7 +320,7 @@ FILE 1 — <target>/open-design.json
 ------------------------------------------------------------------
 # NAME / HOMEPAGE / AUTHOR / TAGS vary by manifest audience:
 #   - "bundled":     name="example-<slug>", author=Open Design, homepage=github.com/nexu-io/open-design/...
-#   - "marketplace": name="wxcode-<slug>",  author=WXCode,      homepage=github.com/GilbertoAbrao/wxcode-design-plugins/tree/main/plugins/<slug>
+#   - "marketplace": name="wxcode-<slug>",  author=WXCode,      homepage=github.com/wxcode-ai/wxcode-design-plugins/tree/main/plugins/<slug>
 #     (manifest `name` must be slash-free — daemon regex /^[a-z0-9][a-z0-9._-]*$/; a `/` => install "name: Invalid")
 # Tags prefix (REQUIRED, in this order):
 #   - "bundled":     ["example", "first-party", "<mode>", "<scenario>", "<surface>", ...style_tags]
@@ -569,7 +569,7 @@ skeleton by archetype slot, not by a domain noun. No prose meta, no checklists.
 RULES (apply to every file):
 - AUTHOR IS FIXED. Copy the `author`, `name`, and `homepage` values the
   orchestrator gives you VERBATIM. In marketplace mode that is exactly
-  `"author": {"name": "WXCode", "url": "https://github.com/GilbertoAbrao/wxcode-design-plugins"}`.
+  `"author": {"name": "WXCode", "url": "https://github.com/wxcode-ai/wxcode-design-plugins"}`.
   NEVER write your own agent/model identity (e.g. "OpenCode", "Claude", "Codex")
   as the author — that is always a bug.
 - Frontmatter (`description`, `triggers`, `example_prompt`) and the manifest
@@ -1070,14 +1070,14 @@ elsewhere — fix it here and both generators inherit it.
 ## Marketplace deployment model (default)
 
 Default `--mode=marketplace` ships plugins to the public WXCode plugin catalog at
-https://github.com/GilbertoAbrao/wxcode-design-plugins.
+https://github.com/wxcode-ai/wxcode-design-plugins.
 
 - Tenants register the catalog raw URL once:
-  `https://raw.githubusercontent.com/GilbertoAbrao/wxcode-design-plugins/main/registry/wxcode-marketplace.json`
+  `https://raw.githubusercontent.com/wxcode-ai/wxcode-design-plugins/main/registry/wxcode-marketplace.json`
 - The daemon polls the URL on a fixed interval (or on user-triggered Refresh) and
   lists entries under Plugins → Available
 - 1-click install on the tenant UI; pulls the plugin folder from
-  `github:GilbertoAbrao/wxcode-design-plugins@main/plugins/<slug>`
+  `github:wxcode-ai/wxcode-design-plugins@main/plugins/<slug>`
 - New runs regenerate the catalog (§4.5); tenants pick up the diff on next refresh —
   no VM rebuild
 
